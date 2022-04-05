@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+// Ait Ouakrim Oussama Semaine 2
 
 public class LoadingScreenActivity extends AppCompatActivity {
 
