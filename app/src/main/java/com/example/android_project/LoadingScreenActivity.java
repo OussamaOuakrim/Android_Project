@@ -14,7 +14,7 @@ import android.os.Handler;
 
 public class LoadingScreenActivity extends AppCompatActivity {
 
-    private static final long SPLASH_SCREEN_TIMEOUT = 2000;
+    private static final long LOADING_SCREEN_TIMEOUT = 2000;
     
     ProgressDialog progressDialog;
 
@@ -27,7 +27,6 @@ public class LoadingScreenActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
 
-        //CheckForUpdate();
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -37,10 +36,10 @@ public class LoadingScreenActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, SPLASH_SCREEN_TIMEOUT);
+        }, LOADING_SCREEN_TIMEOUT);
     }
     public void ShowDialog(Context context) {
-        //setting up progress dialog
+        
         progressDialog = new ProgressDialog(context);
         progressDialog.show();
         progressDialog.setContentView(R.layout.progress_dialog);
