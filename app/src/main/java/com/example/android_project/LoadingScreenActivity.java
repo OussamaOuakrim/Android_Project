@@ -1,22 +1,22 @@
-package com.addition.simpleapi;
+package com.example.applicationprojettest.covidApi;
+
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import android.app.ProgressDialog;
-import android.content.Context;
+import com.example.applicationprojettest.HelperActivity;
+import com.example.applicationprojettest.R;
 
-import android.content.Intent;
-
-import android.os.Bundle;
-import android.os.Handler;
-
-// Ait Ouakrim Oussama Semaine 2
 
 public class LoadingScreenActivity extends AppCompatActivity {
 
-    private static final long LOADING_SCREEN_TIMEOUT = 2000;
-    
+    private static final long SPLASH_SCREEN_TIMEOUT = 4000;
+
     ProgressDialog progressDialog;
 
 
@@ -28,19 +28,20 @@ public class LoadingScreenActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
 
+        //CheckForUpdate();
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
 
-                Intent intent = new Intent(LoadingScreenActivity.this, MainActivity.class);
+                Intent intent = new Intent(LoadingScreenActivity.this, MenuActivity.class);
                 startActivity(intent);
                 finish();
             }
-        }, LOADING_SCREEN_TIMEOUT);
+        }, SPLASH_SCREEN_TIMEOUT);
     }
     public void ShowDialog(Context context) {
-        
+        //setting up progress dialog
         progressDialog = new ProgressDialog(context);
         progressDialog.show();
         progressDialog.setContentView(R.layout.progress_dialog);
